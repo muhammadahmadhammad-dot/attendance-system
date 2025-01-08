@@ -28,6 +28,8 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <input type="date" required name="start" class="form-control">
+                                <small>From</small>
+                                
                                 @error('start')
                                 <p class="fs-6 text-danger">{{$message}}</p>
                                     
@@ -35,6 +37,7 @@
                             </div>
                             <div class="col-md-4">
                                 <input type="date" required name="end" class="form-control">
+                                <small>To</small>
                                 @error('end')
                                 <p class="fs-6 text-danger">{{$message}}</p>
                                     

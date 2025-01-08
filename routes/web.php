@@ -45,19 +45,6 @@ Route::middleware(['auth', IsAdminMiddleware::class])->prefix('admin')->group(fu
     Route::get('/students/pdf/{id}', [StudentController::class, 'generateStdPdf'])->name('student.pdf');
     Route::get('/all-students/pdf/', [StudentController::class, 'generateAllStdPdf'])->name('students.pdf');
 
-    // Route::get('/leave', [LeaveController::class, 'index'])->name('leave.index');
-    // Route::delete('/leave/{leave}', [LeaveController::class, 'destroy'])->name('leave.destroy');
-    // Route::get('/leave/{leave}/edit', [LeaveController::class, 'edit'])->name('leave.edit');
-    // Route::put('/leave/{leave}', [LeaveController::class, 'update'])->name('leave.update');
-
-
-    Route::resource('/leave' ,LeaveController::class)->except(['show','create','store']);
-    Route::resource('/attendance' ,AttendanceController::class)->except('show');
-
-    // Route::get('/all-attendance', [AttendanceController::class, 'index'])->name('attendance.index');
-    // Route::get('/attendance/create', [AttendanceController::class, 'create'])->name('attendance.create');
-    // Route::post('/attendance', [AttendanceController::class, 'store'])->name('attendance.store');
-    // Route::delete('/attendance/{attendance}', [AttendanceController::class, 'destroy'])->name('attendance.destroy');
-    // Route::get('/attendance/{attendance}/edit', [AttendanceController::class, 'edit'])->name('attendance.edit');
-    // Route::put('/attendance/{attendance}', [AttendanceController::class, 'update'])->name('attendance.update');
+    Route::resource('/leave', LeaveController::class)->except(['show', 'create', 'store']);
+    Route::resource('/attendance', AttendanceController::class)->except('show');
 });
