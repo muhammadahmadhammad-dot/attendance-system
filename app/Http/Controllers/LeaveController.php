@@ -18,7 +18,7 @@ class LeaveController extends Controller
         return view('admin.leave.leave', compact('leaves'));
     }
 
- 
+
 
     public function edit(Leave $leave)
     {

@@ -34,7 +34,7 @@
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Leave Type</label>
-                        <select name="type" class="form-select">
+                        <select name="type" required class="form-select">
                             <option value="">Select </option>
                             <option value="Sick">Sick Leave</option>
                             <option value="Medical">Medical Leave</option>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Reason</label>
-                        <textarea name="reason" rows="3" class="form-control">{{ old('reason') }}</textarea>
+                        <textarea name="reason" required rows="3" class="form-control">{{ old('reason') }}</textarea>
                         @error('reason')
                             <p class="fs-6 text-danger">{{ $message }}</p>
                         @enderror

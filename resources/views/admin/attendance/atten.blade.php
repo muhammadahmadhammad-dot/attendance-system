@@ -41,31 +41,31 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($attendances as $record)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{$record->user->name}}</td>
-                                <td>
-                                    @if ( $record->attendance == 1)
-                                    Present
-                                    @elseif ( $record->attendance == 2)
-                                    Leave
-                                    @else
-                                    Absant
-                                @endif
-                                </td>
-                                <td>{{ $record->created_at->format('M d, Y') }}</td>
-                                <td>
-                                   <div class="d-flex">
-                                    <a href="{{route('attendance.edit',$record)}}" class="btn btn-sm btn-primary">Edit</a>
-                                    <form action="{{route('attendance.update',$record)}}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-sm btn-danger ms-2">Delete</button>
-                                    </form>
-                                   </div>
-                                </td>
-                            </tr>
+                         @foreach ($attendances as $record)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{$record->user->name}}</td>
+                            <td>
+                                @if ( $record->attendance == 1)
+                                Present
+                                @elseif ( $record->attendance == 2)
+                                Leave
+                                @else
+                                Absant
+                            @endif
+                            </td>
+                            <td>{{ $record->created_at->format('M d, Y') }}</td>
+                            <td>
+                               <div class="d-flex">
+                                <a href="{{route('attendance.edit',$record)}}" class="btn btn-sm btn-primary">Edit</a>
+                                <form action="{{route('attendance.update',$record)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-sm btn-danger ms-2">Delete</button>
+                                </form>
+                               </div>
+                            </td>
+                        </tr>
                         @endforeach
 
                     </tbody>

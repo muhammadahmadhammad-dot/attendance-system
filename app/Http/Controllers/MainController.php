@@ -62,7 +62,7 @@ class MainController extends Controller
             $students = User::where('role', 0)->get();
             foreach ($students as $student) {
                 if (!$student->attendances()->whereDate('created_at', $yesterday)->exists()) {
-                    if ($student->created_at <= $yesterday) {
+                    if ($student->created_at < today()) {
                         $student->attendances()->create(
                             [
                                 'attendance' => 0,
@@ -98,7 +98,7 @@ class MainController extends Controller
         $totalstudents = User::where('role', 0)->count();
         $attendances = Attendance::where('created_at', '>=', today())->get();
 
-        
+
         $presentStudents = 0;
         $leavedStudents = 0;
         $apsentStudents = 0;

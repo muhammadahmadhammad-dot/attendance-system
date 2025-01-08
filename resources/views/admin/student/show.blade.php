@@ -27,14 +27,14 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-5">
-                                    <input type="date" name="start" class="form-control">
+                                    <input type="date" required name="start" class="form-control">
                                     @error('start')
                                     <p class="fs-6 text-danger">{{$message}}</p>
                                         
                                     @enderror
                                 </div>
                                 <div class="col-md-5">
-                                    <input type="date" name="end" class="form-control">
+                                    <input type="date" required name="end" class="form-control">
                                     @error('end')
                                     <p class="fs-6 text-danger">{{$message}}</p>
                                         

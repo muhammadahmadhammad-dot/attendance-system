@@ -35,7 +35,7 @@
                         @method('PUT')
                         <div class="mb-3">
                             <label class="form-label">Student </label>
-                            <select name="studentname" class="form-select">
+                            <select name="studentname" required class="form-select">
                                 <option value="{{ $leave->user->id }}" selected>{{ $leave->user->name }}</option>
 
                                 @foreach ($students as $student)
@@ -48,7 +48,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Type </label>
-                            <select name="type" class="form-select">
+                            <select name="type" required class="form-select">
                                 <option value="Sick" {{ $leave->type == 'Sick' ? 'selected' : '' }}>Sick Leave</option>
                                 <option value="Medical" {{ $leave->type == 'Medical' ? 'selected' : '' }}>Medical Leave
                                 </option>
@@ -63,7 +63,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Reason </label>
-                            <textarea name="reason" class="form-control">{{$leave->reason}}</textarea>
+                            <textarea name="reason" required class="form-control">{{$leave->reason}}</textarea>
                             @error('reason')
                                 <p class="fs-6 text-danger">{{ $message }}</p>
                             @enderror

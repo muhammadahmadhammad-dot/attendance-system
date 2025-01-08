@@ -36,7 +36,7 @@ class AuthController extends Controller
             ]
         );
         if (Auth::attempt($validate)) {
-            
+
             return to_route('home');
         } else {
             return redirect()->back()->withInput()->with('danger', 'Sorry I Cant You.');

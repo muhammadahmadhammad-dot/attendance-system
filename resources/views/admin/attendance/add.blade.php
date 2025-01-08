@@ -35,7 +35,7 @@
                         @method('POST')
                         <div class="mb-3">
                             <label class="form-label">Student </label>
-                            <select name="studentname" class="form-select">
+                            <select name="studentname" required class="form-select">
                                 <option value="" selected>Select</option>
 
                                 @foreach ($students as $student)
@@ -48,7 +48,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Attendance </label>
-                            <select name="attendance" class="form-select">
+                            <select name="attendance" required class="form-select">
                                 <option value="" selected>Select</option>
                                 <option value="0" >Apsent</option>
                                 <option value="1" >Present</option>

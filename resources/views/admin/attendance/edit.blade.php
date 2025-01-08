@@ -35,7 +35,7 @@
                         @method('PUT')
                         <div class="mb-3">
                             <label class="form-label">Student </label>
-                            <select name="studentname" class="form-select">
+                            <select name="studentname" required class="form-select">
                                 <option value="{{ $attendance->user->id }}" selected>{{ $attendance->user->name }}</option>
 
                                 @foreach ($students as $student)
@@ -48,7 +48,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Attendance </label>
-                            <select name="attendance" class="form-select">
+                            <select name="attendance" required class="form-select">
                                 <option value="0" {{ $attendance->attendance == 0 ? 'selected' : '' }}>Apsent</option>
                                 <option value="1" {{ $attendance->attendance == 1 ? 'selected' : '' }}>Present</option>
                                 <option value="2" {{ $attendance->attendance == 2 ? 'selected' : '' }}>Approved Leave</option>
