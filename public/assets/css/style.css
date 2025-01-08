@@ -1,0 +1,15 @@
+.row {
+    display: flex;
+    width: 90%;
+    margin: 0px auto;
+}
+
+.coloum-1,
+.coloum-2,
+.coloum-3 {
+    width: 20%;
+}
+
+.coloum-2 {
+    width: 40%;
+}
