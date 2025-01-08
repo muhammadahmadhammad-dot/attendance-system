@@ -22,41 +22,39 @@
                     <div class="col-md-2">
                         <h5 class="m-0">Student Report</h5>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <form action="{{route('student.search',$student->id)}}" method="post">
                             @csrf
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-5">
                                     <input type="date" name="start" class="form-control">
                                     @error('start')
                                     <p class="fs-6 text-danger">{{$message}}</p>
                                         
                                     @enderror
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-5">
                                     <input type="date" name="end" class="form-control">
                                     @error('end')
                                     <p class="fs-6 text-danger">{{$message}}</p>
                                         
                                     @enderror
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                     <input type="submit" value="Search" class="btn btn-danger">
                                 </div>
-                                @if (Route::is('student.search'))
-                                <div class="col-md-3">
-                                    <a href="{{route('students.view',$student->id)}}" class="btn btn-danger">Clear</a>
-                                </div>
                                     
-                                @endif
                             </div>
                            
                            
                             
                         </form>
                     </div>
-                    <div class="col-md-2 text-end">
-                        <a href="{{ route('student.pdf',$student->id) }}" class="btn btn-info">Create Report</a>
+                    <div class="col-md-4 text-end">
+                        @if (Route::is('student.search'))
+                        <a href="{{route('students.view',$student->id)}}" class="btn btn-danger">Clear</a>
+                        @endif
+                        <a href="{{ route('student.pdf',$student->id) }}" class="btn btn-outline-primary">Create Report</a>
                         <a href="{{ route('students.index') }}" class="btn btn-danger">Back</a>
                     </div>
                 </div>

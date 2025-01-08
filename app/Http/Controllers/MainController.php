@@ -94,17 +94,15 @@ class MainController extends Controller
 
     public function adminHome()
     {
-        $date = Carbon::yesterday();
 
         $totalstudents = User::where('role', 0)->count();
         $attendances = Attendance::where('created_at', '>=', today())->get();
 
-        $YesterdayAttendance = Attendance::where('created_at', '>=', $date)->where('created_at', '<', today())->get();
-        // dd($YesterdayAttendance);
+        
         $presentStudents = 0;
         $leavedStudents = 0;
         $apsentStudents = 0;
-        foreach ($YesterdayAttendance as $value) {
+        foreach ($attendances as $value) {
             if ($value->attendance == 1) {
                 $presentStudents++;
             } elseif ($value->attendance == 2) {

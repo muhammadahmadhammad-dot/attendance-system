@@ -16,24 +16,24 @@
             </div>
             <div class="col-md-3">
                 <div class="container rounded text-light py-2 bg-secondary shadow-sm">
-                    <p class="mb-0 fs-4">Yesterday Present</p>
+                    <p class="mb-0 fs-4">Today Present</p>
                     <p class=" mb-0 fs-4">{{$presentStd}}</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="container rounded text-light py-2 bg-danger shadow-sm">
-                    <p class="mb-0 fs-4">Yesterday Absent</p>
+                    <p class="mb-0 fs-4">Today Absent</p>
                     <p class=" mb-0 fs-4">{{$apsentStd}}</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="container rounded text-light py-2 bg-success shadow-sm">
-                    <p class="mb-0 fs-4">Yesterday Leaved</p>
+                    <p class="mb-0 fs-4">Today Leaved</p>
                     <p class=" mb-0 fs-4">{{$leavedStd}}</p>
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card mt-5">
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-6">

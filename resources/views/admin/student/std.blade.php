@@ -19,44 +19,42 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <h5 class="m-0">All Students </h5>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <form action="{{route('students.search.all')}}" method="post">
                         @csrf
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <input type="date" name="start" class="form-control">
                                 @error('start')
                                 <p class="fs-6 text-danger">{{$message}}</p>
                                     
                                 @enderror
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <input type="date" name="end" class="form-control">
                                 @error('end')
                                 <p class="fs-6 text-danger">{{$message}}</p>
                                     
                                 @enderror
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <input type="submit" value="Search" class="btn btn-danger">
                             </div>
-                            @if (Route::is('students.search.all'))
-                            <div class="col-md-3">
-                                <a href="{{route('students.index')}}" class="btn btn-danger">Clear</a>
-                            </div>
                                 
-                            @endif
                         </div>
                        
                        
                         
                     </form>
                 </div>
-                <div class="col-md-2 text-end">
-                    <a href="{{route('students.pdf')}}" class="btn btn-info">Create Report</a>
+                <div class="col-md-3 text-end">
+                    @if (Route::is('students.search.all'))
+                    <a href="{{route('students.index')}}" class="btn btn-danger">Clear</a>
+                    @endif
+                    <a href="{{route('students.pdf')}}" class="btn btn-outline-primary">Create Report</a>
                 </div>
             </div>
         </div>
@@ -113,7 +111,7 @@
                                 <td>{{$apsent}}</td>
                                 <td>{{$leave}}</td>
                                 <td>{{ $record->created_at->format('M d, Y') }}</td>
-                                <td><a href="{{route('students.view',$record->id)}}" class="btn btn-success">View</a></td>
+                                <td><a href="{{route('students.view',$record->id)}}" class="btn btn-outline-success">View</a></td>
                             </tr>
                         @endforeach
 
